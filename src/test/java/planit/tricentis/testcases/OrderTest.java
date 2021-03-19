@@ -91,9 +91,10 @@ public class OrderTest extends BaseTest {
 		String actualPaymentMessae = checkoutPage.getPaymentMessage();
 		Assert.assertEquals(actualPaymentMessae, Constants.expectedPaymentMessage);
 		checkoutPage.clickPaymentInfoButton();
+		checkoutPage.clickConfirmOrderContinueButton();
 		
 		ThankyouPage thankYouPage = new ThankyouPage(driver);
-		String actualThankYouText = thankYouPage.getThankYouText();
+		String actualThankYouText = thankYouPage.getorderConfirmationText();
 		Assert.assertEquals(actualThankYouText, Constants.expectedOrderConfirmMessage);
 		
 		String orderNumber=thankYouPage.getOrderNumber();

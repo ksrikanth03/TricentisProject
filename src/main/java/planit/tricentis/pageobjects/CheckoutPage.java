@@ -26,6 +26,7 @@ public class CheckoutPage {
 	By paymentContinue = By.cssSelector(".payment-method-next-step-button");
 	By paymentMessageLocator = By.cssSelector(".payment-info p");
 	By paymentInfoContinue = By.cssSelector(".payment-info-next-step-button");
+	By confirmOrderContinue = By.cssSelector(".confirm-order-next-step-button");
 	
 
 	private WebDriver driver;
@@ -131,6 +132,11 @@ public class CheckoutPage {
 	public void clickPaymentInfoButton()
 	{
 		driver.findElement(paymentInfoContinue).click();
+	}
+	
+	public void clickConfirmOrderContinueButton()
+	{
+		driver.findElement(confirmOrderContinue).click();
 	}
 	
 	
