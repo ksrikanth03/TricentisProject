@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-03-19T15:21:35 IST" name="FunctionalSuite" finished-at="2021-03-19T15:21:52 IST" duration-ms="17774">
+    <groups>
+    </groups>
+    <test started-at="2021-03-19T15:21:35 IST" name="Test" finished-at="2021-03-19T15:21:52 IST" duration-ms="17774">
+      <class name="planit.tricentis.OrderTest">
+        <test-method is-config="true" signature="loginIntoApplication()[pri:0, instance:planit.tricentis.OrderTest@28975c28]" started-at="2021-03-19T15:21:35 IST" name="loginIntoApplication" finished-at="2021-03-19T15:21:48 IST" duration-ms="13249" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginIntoApplication -->
+        <test-method signature="orderConfirmationTest()[pri:0, instance:planit.tricentis.OrderTest@28975c28]" started-at="2021-03-19T15:21:48 IST" name="orderConfirmationTest" finished-at="2021-03-19T15:21:51 IST" duration-ms="2722" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- orderConfirmationTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:planit.tricentis.OrderTest@28975c28]" started-at="2021-03-19T15:21:51 IST" name="tearDown" finished-at="2021-03-19T15:21:52 IST" duration-ms="1655" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- planit.tricentis.OrderTest -->
+    </test> <!-- Test -->
+  </suite> <!-- FunctionalSuite -->
+</testng-results>
