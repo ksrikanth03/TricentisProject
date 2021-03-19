@@ -63,7 +63,7 @@ public class ShoppingCartPage {
 		driver.findElement(termsOfServiceLocator).click();
 	}
 	
-	public void clickCheckOut() 
+	public void clickCheckOut()
 	{
 		driver.findElement(checkOutLocator).click();
 	}

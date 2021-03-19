@@ -19,29 +19,21 @@ import planit.tricentis.common.BaseTest;
 import planit.tricentis.common.Constants;
 import planit.tricentis.common.TestData;
 
-public class OrderTest {
+public class OrderTest extends BaseTest {
 	
 	WebDriver driver;
-	BaseTest baseTest = new BaseTest();
-	LoginPage loginPage = new LoginPage(driver);
-	HomePage homePage = new HomePage(driver);
-	ShoppingCartPage shoppingCart= new ShoppingCartPage(driver);
-	ProductsListPage productListPage = new ProductsListPage(driver);
-	SingleProductPage singleProductPage = new SingleProductPage(driver);
-	CheckoutPage checkoutPage = new CheckoutPage(driver);
-	ThankyouPage thankYouPage = new ThankyouPage(driver);
 
 	@BeforeTest
 	public void loginIntoApplication() throws Exception 
 	{
-		driver = baseTest.initializeBrowser();
+		driver = initializeBrowser();
 	}
 	
 	@Test
 	public void orderConfirmationTest()
 	{
-		
-		loginPage.clickLoginButton();
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.clickLoginLink();
 		String actualoginText = loginPage.getWelcomeText();
 		Assert.assertEquals(actualoginText, Constants.expectedLoginText);
 		
@@ -49,15 +41,19 @@ public class OrderTest {
 		loginPage.enterpassword(Constants.password);
 		loginPage.clickLoginButton();
 		
+		HomePage homePage = new HomePage(driver);
 		String actualAccountID = homePage.getAccountIdTopRight();
 		Assert.assertEquals(actualAccountID, Constants.email_id);
 		
+		ShoppingCartPage shoppingCart= new ShoppingCartPage(driver);
+		ProductsListPage productListPage = new ProductsListPage(driver);
 		homePage.goToShoppingCart();
 		shoppingCart.clearCart();
 		
 		homePage.goToBooksMenu();
 		productListPage.clickFirstProduct();
 		
+		SingleProductPage singleProductPage = new SingleProductPage(driver);
 		double productPrice = Double.parseDouble(singleProductPage.getProductPrice());
 		singleProductPage.enterProductQuantity(TestData.productQuanity);
 		singleProductPage.clickAddToCart();
@@ -72,6 +68,7 @@ public class OrderTest {
 		shoppingCart.selectTermsOfService();
 		shoppingCart.clickCheckOut();
 		
+		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		checkoutPage.selectNewBillingAddress();
 		
 		Random r=new Random();
@@ -95,6 +92,7 @@ public class OrderTest {
 		Assert.assertEquals(actualPaymentMessae, Constants.expectedPaymentMessage);
 		checkoutPage.clickPaymentInfoButton();
 		
+		ThankyouPage thankYouPage = new ThankyouPage(driver);
 		String actualThankYouText = thankYouPage.getThankYouText();
 		Assert.assertEquals(actualThankYouText, Constants.expectedOrderConfirmMessage);
 		
@@ -103,15 +101,13 @@ public class OrderTest {
 		
 		thankYouPage.clickOrderCompletionButton();
 		thankYouPage.logout();
-		
-		
 	
 	}
 	
 	@AfterTest
 	public void tearDown() 
 	{
-		driver.quit();
+//		driver.quit();
 	}
 	
 	

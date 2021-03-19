@@ -3,7 +3,7 @@
 <suite name="FunctionalSuite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="planit.tricentis.OrderTest"/>
+      <class name="planit.tricentis.testcases.OrderTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

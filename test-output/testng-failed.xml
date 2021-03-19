@@ -3,13 +3,13 @@
 <suite name="Failed suite [FunctionalSuite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="planit.tricentis.OrderTest">
+      <class name="planit.tricentis.testcases.OrderTest">
         <methods>
           <include name="tearDown"/>
           <include name="loginIntoApplication"/>
           <include name="orderConfirmationTest"/>
         </methods>
-      </class> <!-- planit.tricentis.OrderTest -->
+      </class> <!-- planit.tricentis.testcases.OrderTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [FunctionalSuite] -->

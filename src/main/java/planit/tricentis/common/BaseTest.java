@@ -2,6 +2,7 @@ package planit.tricentis.common;
 
 import java.io.FileReader;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 
@@ -19,6 +20,8 @@ public class BaseTest extends Driver{
 		
 		driver = this.getDriver(propertiesObject.getProperty("browser"));
 		driver.get(propertiesObject.getProperty("url"));
+		int wait_time = Integer.parseInt(propertiesObject.getProperty("implicit_wait"));
+		driver.manage().timeouts().implicitlyWait(wait_time, TimeUnit.SECONDS);
 		return driver;
 	}
 	
